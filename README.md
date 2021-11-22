@@ -9,7 +9,7 @@
 
 &nbsp;
 
-## [Live Demo Link](https://www.npmjs.com/package/staggertextrevealanimation)
+## [Live Demo Link](https://www.npmjs.com/package/stagger-text-reveal-animation)
 
 ## [Find this on npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
 
@@ -31,7 +31,7 @@
 
 ## **Installation**
 
-`npm install staggertextrevealanimation;`
+`npm install stagger-text-reveal-animation;`
 
 &nbsp;
 
@@ -41,7 +41,7 @@
 
 ```javascript
 
-import StaggerText from "staggertextrevealanimation";
+import StaggerText from "stagger-text-reveal-animation";
 
 ```
 
@@ -54,7 +54,7 @@ import StaggerText from "staggertextrevealanimation";
 ```javascript
 
 import React from 'react';
-import StaggerText from "staggertextrevealanimation";
+import StaggerText from "stagger-text-reveal-animation";
 
 export const Component = () => {
 
@@ -105,7 +105,7 @@ Use these props to customize your text animation.
 
 ```javascript
 import React from 'react';
-import StaggerText from "staggertextrevealanimation";
+import StaggerText from "stagger-text-reveal-animation";
 
 export const Component = () => {
 
