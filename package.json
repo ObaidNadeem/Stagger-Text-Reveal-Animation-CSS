@@ -1,0 +1,47 @@
+{
+  "name": "staggertextrevealanimation",
+  "version": "0.0.1",
+  "description": "Stagger Text Reveal Animation is a component for React Js that allow you to apply staggering effect to your text. Just pass your text as a prop. ",
+  "main": "dist/index.js",
+  "typings": "./types/staggertextrevealanimation/staggertextrevealanimation.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "npm run transpile"
+  },
+  "keywords": [
+    "stagger",
+    "text",
+    "reveal",
+    "animation",
+    "react",
+    "js",
+    "css"
+  ],
+  "author": "Obaid Nadeem",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-react": "^7.16.0",
+    "babel": "^6.23.0",
+    "babel-loader": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^6.5.1",
+    "html-webpack-plugin": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0"
+  }
+}

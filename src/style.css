@@ -1,0 +1,6 @@
+.stagger-animation-text{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
