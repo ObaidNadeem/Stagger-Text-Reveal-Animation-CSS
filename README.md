@@ -21,7 +21,7 @@
 
 ## **Introduction**
 
-## The stagger text reveal animation helps you to apply stagger effect to your text. Just pass your text as a prop. The component is fully [customizable](#props) and available on [npm](https://www.npmjs.com/package/test-package-of-obaid)
+## The stagger text reveal animation helps you to apply stagger effect to your text. Just pass your text as a prop. The component is fully [customizable](#props) and available on [npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
 
 ### This animation is done using css and javascript in React Js so no need of any external libraries like anime.js, Spring etc
 
