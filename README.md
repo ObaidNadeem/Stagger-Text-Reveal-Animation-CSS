@@ -141,4 +141,4 @@ export const Component = () => {
 
 ## **LICENSE**
 
-[MIT](./LICENSE) © [Obaid Nadeem](https://github.com/ObaidNadeem)
+[MIT](./LICENSE)  ©  [Obaid Nadeem](https://github.com/ObaidNadeem)
