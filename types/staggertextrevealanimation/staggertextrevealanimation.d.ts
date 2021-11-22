@@ -1,2 +1,2 @@
 export default function StaggerText(): JSX.Element;
-declare module 'staggertextrevealanimation';
+declare module 'stagger-text-reveal-animation';
