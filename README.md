@@ -9,7 +9,7 @@
 
 &nbsp;
 
-## [Live Demo Link](https://www.npmjs.com/package/stagger-text-reveal-animation)
+## [Live Demo Link](https://obaidnadeem.github.io/Stagger-Text-Reveal-Animation-CSS/)
 
 ## [Find this on npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
 
