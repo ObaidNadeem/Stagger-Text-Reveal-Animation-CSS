@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Stagger Text Reveal Animation is a component for React Js that allow you to apply staggering effect to your text. Just pass your text as a prop. ",
   "main": "dist/index.js",
-  "typings": "./types/staggertextrevealanimation/staggertextrevealanimation.d.ts",
+  "typings": "./types/stagger-text-reveal-animation/stagger-text-reveal-animation.d.ts",
   "homepage": "https://obaidnadeem.github.io/Stagger-Text-Reveal-Animation-CSS/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
