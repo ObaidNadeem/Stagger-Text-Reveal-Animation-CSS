@@ -53,28 +53,29 @@ var StaggerText = function StaggerText(props) {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "stagger-animation-text",
     style: {
-      height: "".concat(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height, "px"),
-      width: "".concat(props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * array.length : props.fontSize * array.length : props.width, "px")
+      height: "".concat(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+      // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * array.length : props.fontSize * array.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+      width: "".concat(props.width == 0 || props.width == null ? "" : props.width).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
     }
   }, array.map(function (item, i) {
     return /*#__PURE__*/_react["default"].createElement("h1", {
       key: i,
       style: {
-        transform: props.reverse == null || props.reverse == "" || props.reverse == false || props.reverse !== true ? animate ? "translateY(0px)" : "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize : props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize, "px)") : animate ? "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize : props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize, "px)") : "translateY(0px)",
+        transform: props.reverse == null || props.reverse == "" || props.reverse == false || props.reverse !== true ? animate ? "translateY(0".concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize : props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : animate ? "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize : props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : "translateY(0".concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")"),
         transitionDelay: "".concat((props.duration == null || props.duration == 0 ? 0.7 : props.duration) / (props.stagger == null || props.stagger == 0 ? 60 : props.stagger) * i, "s"),
         transitionDuration: "".concat(props.duration == null || props.duration == 0 ? 0.7 : props.duration, "s"),
         transitionTimingFunction: "ease-in-out",
         transitionProperty: "transform",
         color: "".concat(props.color == "" || props.color == null ? "#282828" : props.color),
-        fontSize: "".concat(props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize, "px"),
+        fontSize: "".concat(props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
         fontWeight: "".concat(props.color == "" || props.fontWeight == null ? "bold" : props.fontWeight),
         fontFamily: "".concat(props.fontFamily == "" || props.fontFamily == null ? "" : props.fontFamily)
       },
       className: "stagger-animation-character"
-    }, item == "&nbsp;" ? /*#__PURE__*/_react["default"].createElement("h1", {
+    }, item == "&nbsp;" ? /*#__PURE__*/_react["default"].createElement("p", {
       key: i,
       style: {
-        fontSize: "".concat(props.wordSpacing == null || props.wordSpacing == 0 ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.wordSpacing, "px")
+        fontSize: "".concat(props.wordSpacing == null || props.wordSpacing == 0 ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.wordSpacing).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
       }
     }, "\xA0") : item);
   }));
