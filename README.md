@@ -21,7 +21,7 @@
 
 ## **Introduction**
 
-## The stagger text reveal animation helps you to apply stagger effect to your text. Just pass your text as a prop. The component is fully [customizable](#props) and available on [npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
+## The stagger text reveal animation helps you to apply stagger effect to your text. Just pass your text as a prop. The component is fully [customizable](#props) and [responsive](#responsive) available on [npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
 
 ### This animation is done using css and javascript in React Js so no need of any external libraries like anime.js, Spring etc
 
@@ -94,7 +94,8 @@ Use these props to customize your text animation.
 | **reverse**             | Boolean     |Pass **true** to reverse the reveal animaion. Conceals the staggering text.        |    false           |
 | **triggerAfter**        | Number    |Gives delay to animation. Your animation will be triggered after respective *seconds* you entered.        |    0           |
 | **wordSpacing**         | Number       | Increases or Decreases space between words. Calculates value in pixels.       |    0           |
-| **width**               | Number       |Controls width of the Sentance. Calculates value in pixels.       |    Calculated           |
+| **unit**              | string       | This is a very important prop to make component responsive. Pass your value as string in "rem" or "vw" whatever you prefer.       |    px           |
+| **width**               | Number       |Controls width of the Sentance. Calculates value in pixels.       | If you don't pass width as a prop, it will be 100vw initially.           |
 | **height**              | Number       |Controls height of the Sentance. Calculates value in pixels.       |    48px           |
 
 &nbsp;
@@ -122,6 +123,7 @@ export const Component = () => {
                 direction={"down"}
                 reverse={true}
                 triggerAfter={2}
+                unit = {"rem"}
                 wordSpacing={200}
                 width={850}
                 height={150}
@@ -134,6 +136,30 @@ export const Component = () => {
 ```
 
 ^ all the values are read in *pixels* and *seconds*.
+
+&nbsp;
+
+---
+
+## **Responsive**
+
+The component can be made responsive using *vw* or *rem* or any other unit you want to use.
+
+```javascript
+    unit={"unit"}
+```
+
+Using **vw** will make the componenet shift size according to view port width.
+
+When using **rem** you would have to define rem values for different viewport widths in css. You can search more about how rem works on google.
+
+```css
+@media screen and (max-width: 600px) {
+  .root {
+      font-size: 8px;
+    }
+}
+```
 
 &nbsp;
 

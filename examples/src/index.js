@@ -29,14 +29,15 @@ const App = () => {
                             text={"THE ILLUSION OF"}
                             fontFamily={"'Antic Didone', serif"}
                             fontWeight={"lighter"}
-                            fontSize={90}
+                            fontSize={7}
                             duration={0.9}
                             // stagger={10}
                             //   direction={"down"}
                             // reverse={true}
-                            // triggerAfter={2}
+                            triggerAfter={0.5}
+                            unit={"vw"}
                             // wordSpacing={200}
-                            width={850}
+                            // width={850}
                         //   height={100}
                         />
                     </div>
@@ -45,11 +46,12 @@ const App = () => {
                             text={"PERFECTION,"}
                             fontFamily={"'Antic Didone', serif"}
                             fontWeight={"10"}
-                            fontSize={90}
-                            width={900}
+                            fontSize={7}
+                            // width={900}
                             duration={0.9}
-                            triggerAfter={0.2}
-                        //   height={100}
+                            triggerAfter={0.6}
+                            unit={"vw"}
+                            //   height={100}
                         />
                     </div>
                     <div className="stagger">
@@ -57,10 +59,11 @@ const App = () => {
                             text={"IS AN ILLUSION"}
                             fontFamily={"'Antic Didone', serif"}
                             fontWeight={"10"}
-                            fontSize={90}
+                            fontSize={7}
                             duration={0.9}
-                            triggerAfter={0.4}
-                        //   height={100}
+                            triggerAfter={0.7}
+                            unit={"vw"}
+                            //   height={100}
 
                         />
                     </div>
@@ -70,21 +73,22 @@ const App = () => {
                                 text={"ANYWAY."}
                                 fontFamily={"'Antic Didone', serif"}
                                 fontWeight={"10"}
-                                fontSize={90}
+                                fontSize={7}
                                 duration={0.9}
-                                width={450}
-                                triggerAfter={0.4}
-                            // height={100}
+                                // width={450}
+                            triggerAfter={0.9}
+                            unit={"vw"}
+                                // height={100}
                             // direction={"down"}
                             />
                         </div>
-                        <div className="image-main-container">
+                        {/* <div className="image-main-container">
                             <div className="image-container">
                                 <div className="image">
                                     <img src={image} />
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <a
                         href="https://obaidnadeem.surge.sh"

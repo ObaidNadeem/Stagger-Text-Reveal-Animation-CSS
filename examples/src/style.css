@@ -50,7 +50,7 @@ body{
     width: 600px;
     height: 350px;   
     transform: scale(1.5);
-    animation: imageScale 1.4s ease-out forwards 0.2s;
+    animation: imageScale 1.4s ease-out forwards;
 }
 
 .image img{
