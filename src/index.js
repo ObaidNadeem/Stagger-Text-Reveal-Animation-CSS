@@ -2,19 +2,12 @@ import React, { useState, useEffect } from 'react'
 import './style.css'
 
 const StaggerText = (props) => {
+    const {
+        text,
+    } = props;
 
-    const text = props.text == null || props.text == "" ? "STAGGER TEXT" : props.text;
     const [animate, setanimate] = useState(false);
 
-    const array = [];
-
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] == " ") {
-            array.push("&nbsp;");
-        } else {
-            array.push([text[i]])
-        }
-    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -22,18 +15,33 @@ const StaggerText = (props) => {
         }, props.triggerAfter == 0 || props.triggerAfter == null ? 0 : props.triggerAfter * 1000);
     })
 
+    if (typeof text !== 'string' || text.length === 0) {
+        return null;
+    }
+
+    const letters = [];
+
+    for (let i = 0; i < text.length; i++) {
+        if (text[i] === " ") {
+            letters.push("&nbsp;");
+        } else {
+            letters.push([text[i]])
+        }
+    }
+
     return (
-        <div className="stagger-animation-text"
+        <div
+            className="stagger-animation-text"
             style={{
                 height: `${(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height)}${props.unit == null || props.unit == "" ? "px" : props.unit}`,
-                // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * array.length : props.fontSize * array.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+                // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * letters.length : props.fontSize * letters.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
                 width: `${props.width == 0 || props.width == null ? "" : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
             }}
         >
             {
-                array.map((item, i) => {
+                letters.map((item, i) => {
                     return (
-                        <h1 key={i}
+                        <span key={i}
                             style={{
                                 transform:
                                     props.reverse == null || props.reverse == "" || props.reverse == false || props.reverse !== true ?
@@ -64,7 +72,7 @@ const StaggerText = (props) => {
                             {
                                 item == "&nbsp;" ? <p key={i} style={{ fontSize: `${props.wordSpacing == null || props.wordSpacing == 0 ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.wordSpacing}${props.unit == null || props.unit == "" ? "px" : props.unit}` }} >&nbsp;</p> : item
                             }
-                        </h1>
+                        </span>
                     )
                 })}
         </div>
