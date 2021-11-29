@@ -16,7 +16,7 @@ const StaggerText = (props) => {
     })
 
     if (typeof text !== 'string' || text.length === 0) {
-        return null;
+        throw new Error('Wrong text property');
     }
 
     const letters = [];
