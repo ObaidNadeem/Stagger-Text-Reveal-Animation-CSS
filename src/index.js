@@ -3,7 +3,7 @@ import './style.css'
 
 const StaggerText = (props) => {
     const {
-        text,
+        text = '<text placeholder>',
     } = props;
 
     const [animate, setanimate] = useState(false);
