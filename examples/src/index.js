@@ -34,7 +34,6 @@ const App = () => {
                             // stagger={10}
                             //   direction={"down"}
                             // reverse={true}
-                            triggerAfter={0.5}
                             unit={"vw"}
                             // wordSpacing={200}
                             // width={850}
@@ -49,7 +48,7 @@ const App = () => {
                             fontSize={7}
                             // width={900}
                             duration={0.9}
-                            triggerAfter={0.6}
+                            triggerAfter={600}
                             unit={"vw"}
                             //   height={100}
                         />
@@ -61,7 +60,7 @@ const App = () => {
                             fontWeight={"10"}
                             fontSize={7}
                             duration={0.9}
-                            triggerAfter={0.7}
+                            triggerAfter={700}
                             unit={"vw"}
                             //   height={100}
 
@@ -76,8 +75,8 @@ const App = () => {
                                 fontSize={7}
                                 duration={0.9}
                                 // width={450}
-                            triggerAfter={0.9}
-                            unit={"vw"}
+                                triggerAfter={800}
+                                unit={"vw"}
                                 // height={100}
                             // direction={"down"}
                             />

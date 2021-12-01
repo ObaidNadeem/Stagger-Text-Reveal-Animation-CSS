@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
 
-const StaggerText = (props) => {
-    const {
-        text = '<text placeholder>',
-    } = props;
+const StaggerText = ({
+    text = "<text placeholder>",
+    triggerAfter = 0,
+    ...props
+}) => {
 
-    const [animate, setanimate] = useState(false);
-
+    const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
         setTimeout(() => {
-            setanimate(true)
-        }, props.triggerAfter == 0 || props.triggerAfter == null ? 0 : props.triggerAfter * 1000);
+            setAnimate(true);
+        }, triggerAfter);
     })
 
     if (typeof text !== 'string' || text.length === 0) {
