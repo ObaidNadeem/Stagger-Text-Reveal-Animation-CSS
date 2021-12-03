@@ -36,12 +36,13 @@ const App = () => {
                             // reverse={true}
                             triggerAfter={0.5}
                             unit={"vw"}
+                            changeTo={"PERFECTION "}
                             // wordSpacing={200}
                             // width={850}
                         //   height={100}
                         />
                     </div>
-                    <div className="stagger">
+                    {/* <div className="stagger">
                         <StaggerText
                             text={"PERFECTION,"}
                             fontFamily={"'Antic Didone', serif"}
@@ -66,9 +67,9 @@ const App = () => {
                             //   height={100}
 
                         />
-                    </div>
+                    </div> */}
                     <div className="demo-bottom">
-                        <div className="stagger">
+                        {/* <div className="stagger">
                             <StaggerText
                                 text={"ANYWAY."}
                                 fontFamily={"'Antic Didone', serif"}
@@ -81,7 +82,7 @@ const App = () => {
                                 // height={100}
                             // direction={"down"}
                             />
-                        </div>
+                        </div> */}
                         {/* <div className="image-main-container">
                             <div className="image-container">
                                 <div className="image">
