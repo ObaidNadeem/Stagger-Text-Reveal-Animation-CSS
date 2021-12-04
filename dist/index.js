@@ -5,11 +5,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.StaggerTextReveal = exports.StaggerTextChange = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
 require("./style.css");
+
+var _excluded = ["text", "triggerAfter"],
+    _excluded2 = ["text", "triggerAfter", "changeTo"];
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -27,38 +30,52 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var StaggerText = function StaggerText(props) {
-  var text = props.text == null || props.text == "" ? "STAGGER TEXT" : props.text;
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+var StaggerTextReveal = function StaggerTextReveal(_ref) {
+  var _ref$text = _ref.text,
+      text = _ref$text === void 0 ? "<text placeholder>" : _ref$text,
+      _ref$triggerAfter = _ref.triggerAfter,
+      triggerAfter = _ref$triggerAfter === void 0 ? 0 : _ref$triggerAfter,
+      props = _objectWithoutProperties(_ref, _excluded);
 
   var _useState = (0, _react.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       animate = _useState2[0],
-      setanimate = _useState2[1];
-
-  var array = [];
-
-  for (var i = 0; i < text.length; i++) {
-    if (text[i] == " ") {
-      array.push("&nbsp;");
-    } else {
-      array.push([text[i]]);
-    }
-  }
+      setAnimate = _useState2[1];
 
   (0, _react.useEffect)(function () {
     setTimeout(function () {
-      setanimate(true);
-    }, props.triggerAfter == 0 || props.triggerAfter == null ? 0 : props.triggerAfter * 1000);
+      setAnimate(true);
+    }, triggerAfter);
   });
+
+  if (typeof text !== 'string' || text.length === 0) {
+    throw new Error('Wrong text property');
+  }
+
+  var letters = [];
+
+  for (var i = 0; i < text.length; i++) {
+    if (text[i] === " ") {
+      letters.push("&nbsp;");
+    } else {
+      letters.push([text[i]]);
+    }
+  }
+
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: "stagger-animation-text",
     style: {
       height: "".concat(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
-      // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * array.length : props.fontSize * array.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
-      width: "".concat(props.width == 0 || props.width == null ? "" : props.width).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
+      // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * letters.length : props.fontSize * letters.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+      width: "".concat(props.width == 0 || props.width == null ? "" : props.width).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+      overflow: "hidden"
     }
-  }, array.map(function (item, i) {
-    return /*#__PURE__*/_react["default"].createElement("h1", {
+  }, letters.map(function (item, i) {
+    return /*#__PURE__*/_react["default"].createElement("span", {
       key: i,
       style: {
         transform: props.reverse == null || props.reverse == "" || props.reverse == false || props.reverse !== true ? animate ? "translateY(0".concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize : props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : animate ? "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize : props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : "translateY(0".concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")"),
@@ -72,7 +89,7 @@ var StaggerText = function StaggerText(props) {
         fontFamily: "".concat(props.fontFamily == "" || props.fontFamily == null ? "" : props.fontFamily)
       },
       className: "stagger-animation-character"
-    }, item == "&nbsp;" ? /*#__PURE__*/_react["default"].createElement("p", {
+    }, item == "&nbsp;" ? /*#__PURE__*/_react["default"].createElement("span", {
       key: i,
       style: {
         fontSize: "".concat(props.wordSpacing == null || props.wordSpacing == 0 ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.wordSpacing).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
@@ -81,5 +98,120 @@ var StaggerText = function StaggerText(props) {
   }));
 };
 
-var _default = StaggerText;
-exports["default"] = _default;
+exports.StaggerTextReveal = StaggerTextReveal;
+
+var StaggerTextChange = function StaggerTextChange(_ref2) {
+  var _ref2$text = _ref2.text,
+      text = _ref2$text === void 0 ? "<TEXT PLACEHOLDER>" : _ref2$text,
+      _ref2$triggerAfter = _ref2.triggerAfter,
+      triggerAfter = _ref2$triggerAfter === void 0 ? 0 : _ref2$triggerAfter,
+      _ref2$changeTo = _ref2.changeTo,
+      changeTo = _ref2$changeTo === void 0 ? "<CHANGED TEXT>" : _ref2$changeTo,
+      props = _objectWithoutProperties(_ref2, _excluded2);
+
+  var _useState3 = (0, _react.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      animate = _useState4[0],
+      setAnimate = _useState4[1];
+
+  (0, _react.useEffect)(function () {
+    setTimeout(function () {
+      setAnimate(true);
+    }, triggerAfter);
+  });
+
+  if (typeof text !== 'string' || text.length === 0) {
+    throw new Error('Wrong text property');
+  }
+
+  if (typeof changeTo !== 'string' || text.length === 0) {
+    throw new Error('Wrong text property');
+  }
+
+  var letters = [];
+
+  for (var i = 0; i < text.length; i++) {
+    if (text[i] === " ") {
+      letters.push("&nbsp;");
+    } else {
+      letters.push([text[i]]);
+    }
+  }
+
+  var changeToLetters = [];
+
+  for (var _i2 = 0; _i2 < changeTo.length; _i2++) {
+    if (changeTo[_i2] === " ") {
+      changeToLetters.push("&nbsp;");
+    } else {
+      changeToLetters.push([changeTo[_i2]]);
+    }
+  }
+
+  return /*#__PURE__*/_react["default"].createElement("div", {
+    style: {
+      height: "".concat(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+      // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * letters.length : props.fontSize * letters.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+      width: "".concat(props.width == 0 || props.width == null ? "" : props.width).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/_react["default"].createElement("div", {
+    className: "stagger-change-top",
+    style: {
+      height: "".concat(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+      // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * letters.length : props.fontSize * letters.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+      width: "".concat(props.width == 0 || props.width == null ? "" : props.width).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
+    }
+  }, letters.map(function (item, i) {
+    return /*#__PURE__*/_react["default"].createElement("span", {
+      key: i,
+      style: {
+        transform: animate ? "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize : props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : "translateY(0".concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")"),
+        transitionDelay: "".concat((props.duration == null || props.duration == 0 ? 0.7 : props.duration) / (props.stagger == null || props.stagger == 0 ? 60 : props.stagger) * i, "s"),
+        transitionDuration: "".concat(props.duration == null || props.duration == 0 ? 0.7 : props.duration, "s"),
+        transitionTimingFunction: "ease-in-out",
+        transitionProperty: "transform",
+        color: "".concat(props.color == "" || props.color == null ? "#282828" : props.color),
+        fontSize: "".concat(props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+        fontWeight: "".concat(props.color == "" || props.fontWeight == null ? "bold" : props.fontWeight),
+        fontFamily: "".concat(props.fontFamily == "" || props.fontFamily == null ? "" : props.fontFamily)
+      },
+      className: "stagger-animation-character"
+    }, item == "&nbsp;" ? /*#__PURE__*/_react["default"].createElement("span", {
+      key: i,
+      style: {
+        fontSize: "".concat(props.wordSpacing == null || props.wordSpacing == 0 ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.wordSpacing).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
+      }
+    }, "\xA0") : item);
+  })), /*#__PURE__*/_react["default"].createElement("div", {
+    className: "stagger-change-bottom",
+    style: {
+      height: "".concat(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+      // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * letters.length : props.fontSize * letters.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+      width: "".concat(props.width == 0 || props.width == null ? "" : props.width).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
+    }
+  }, changeToLetters.map(function (item, i) {
+    return /*#__PURE__*/_react["default"].createElement("span", {
+      key: i,
+      style: {
+        transform: animate ? "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize : props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")") : "translateY(".concat(props.direction == null || props.direction == "" || props.direction !== "down" ? 0 : props.fontSize == null || props.fontSize == 0 ? -48 * 2 : -props.fontSize * 2).concat(props.unit == null || props.unit == "" ? "px" : props.unit, ")"),
+        transitionDelay: "".concat((props.duration == null || props.duration == 0 ? 0.7 : props.duration) / (props.stagger == null || props.stagger == 0 ? 60 : props.stagger) * i, "s"),
+        transitionDuration: "".concat(props.duration == null || props.duration == 0 ? 0.7 : props.duration, "s"),
+        transitionTimingFunction: "ease-in-out",
+        transitionProperty: "transform",
+        color: "".concat(props.color == "" || props.color == null ? "#282828" : props.color),
+        fontSize: "".concat(props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize).concat(props.unit == null || props.unit == "" ? "px" : props.unit),
+        fontWeight: "".concat(props.color == "" || props.fontWeight == null ? "bold" : props.fontWeight),
+        fontFamily: "".concat(props.fontFamily == "" || props.fontFamily == null ? "" : props.fontFamily)
+      },
+      className: "stagger-animation-character"
+    }, item == "&nbsp;" ? /*#__PURE__*/_react["default"].createElement("span", {
+      key: i,
+      style: {
+        fontSize: "".concat(props.wordSpacing == null || props.wordSpacing == 0 ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.wordSpacing).concat(props.unit == null || props.unit == "" ? "px" : props.unit)
+      }
+    }, "\xA0") : item);
+  })));
+};
+
+exports.StaggerTextChange = StaggerTextChange;
