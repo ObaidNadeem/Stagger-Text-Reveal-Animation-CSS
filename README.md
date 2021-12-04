@@ -2,9 +2,11 @@
 
 ## THIS PACKAGE CONTAINS TWO COMPONENTS
 
+
 - ### **StaggerTextReveal**
 
 - ### **StaggerTextChange**
+
 
 &nbsp;
 &nbsp;
@@ -176,6 +178,7 @@ When using **rem** you would have to define rem values for different viewport wi
 &nbsp;
 
 ---
+
 
 &nbsp;
 
