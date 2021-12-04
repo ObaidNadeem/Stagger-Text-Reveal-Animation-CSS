@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
-import StaggerText from '../../src';
+import { StaggerTextReveal , StaggerTextChange } from '../../src';
 import './style.css'
 import image from './image.jpeg'
 const App = () => {
@@ -25,7 +25,62 @@ const App = () => {
                         }}
                     >ilusión</h3>
                     <div className="stagger">
-                        <StaggerText
+                        <StaggerTextChange
+                            text={"WELL, LUCKILY"}
+                            fontFamily={"'Antic Didone', serif"}
+                            fontWeight={"lighter"}
+                            fontSize={6}
+                            duration={0.9}
+                            // stagger={10}
+                            // direction={"down"}
+                            // reverse={true}
+                            unit={"vw"}
+                            changeTo={"FANTASY IS"}
+                            triggerAfter={500}
+
+                        // wordSpacing={200}
+                        // width={850}
+                        //   height={100}
+                        />
+                    </div>
+                    <div className="stagger">
+                        <StaggerTextChange
+                            text={"WITH ANIMATION"}
+                            fontFamily={"'Antic Didone', serif"}
+                            fontWeight={"lighter"}
+                            fontSize={6}
+                            duration={0.9}
+                            // stagger={10}
+                            // direction={"down"}
+                            // reverse={true}
+                            unit={"vw"}
+                            changeTo={"YOUR FRIEND."}
+                            triggerAfter={700}
+
+                        // wordSpacing={200}
+                        // width={850}
+                        //   height={100}
+                        />
+                    </div>
+                    <div className="stagger">
+                        {/* <StaggerTextChange
+                            text={"BIG THINGS"}
+                            fontFamily={"'Antic Didone', serif"}
+                            fontWeight={"lighter"}
+                            fontSize={6}
+                            duration={0.9}
+                            // stagger={10}
+                            // direction={"down"}
+                            // reverse={true}
+                            unit={"vw"}
+                            changeTo={"BIG THINGS"}
+                        // wordSpacing={200}
+                        // width={850}
+                        //   height={100}
+                        /> */}
+                    </div>
+                    {/* <div className="stagger"> */}
+                    {/* <StaggerText
                             text={"THE ILLUSION OF"}
                             fontFamily={"'Antic Didone', serif"}
                             fontWeight={"lighter"}
@@ -35,12 +90,13 @@ const App = () => {
                             //   direction={"down"}
                             // reverse={true}
                             unit={"vw"}
+                            changeTo={"PERFECTION "}
                             // wordSpacing={200}
                             // width={850}
                         //   height={100}
-                        />
-                    </div>
-                    <div className="stagger">
+                        /> */}
+                    {/* </div> */}
+                    {/* <div className="stagger">
                         <StaggerText
                             text={"PERFECTION,"}
                             fontFamily={"'Antic Didone', serif"}
@@ -65,9 +121,26 @@ const App = () => {
                             //   height={100}
 
                         />
-                    </div>
+                    </div> */}
                     <div className="demo-bottom">
                         <div className="stagger">
+                            {/* <StaggerTextChange
+                            text={"FROM GOD"}
+                            fontFamily={"'Antic Didone', serif"}
+                            fontWeight={"lighter"}
+                            fontSize={6}
+                            duration={0.9}
+                            // stagger={10}
+                            // direction={"down"}
+                            // reverse={true}
+                            unit={"vw"}
+                            changeTo={"FROM HIM."}
+                        // wordSpacing={200}
+                        // width={850}
+                        //   height={100}
+                        /> */}
+                        </div>
+                        {/* <div className="stagger">
                             <StaggerText
                                 text={"ANYWAY."}
                                 fontFamily={"'Antic Didone', serif"}
@@ -80,7 +153,7 @@ const App = () => {
                                 // height={100}
                             // direction={"down"}
                             />
-                        </div>
+                        </div> */}
                         {/* <div className="image-main-container">
                             <div className="image-container">
                                 <div className="image">
