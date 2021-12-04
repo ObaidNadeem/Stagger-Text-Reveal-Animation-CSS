@@ -36,6 +36,7 @@ const StaggerTextReveal = ({
                 height: `${(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height)}${props.unit == null || props.unit == "" ? "px" : props.unit}`,
                 // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * letters.length : props.fontSize * letters.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
                 width: `${props.width == 0 || props.width == null ? "" : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+                ,overflow: "hidden"
             }}
         >
             {

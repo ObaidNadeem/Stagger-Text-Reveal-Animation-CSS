@@ -1,8 +1,12 @@
 # **Stagger Text Reveal Animation React JS**
 
 ## THIS PACKAGE CONTAINS TWO COMPONENTS
-- ### [StaggerTextReveal](#StaggerTextReveal)
-- ### [StaggerTextChange](#StaggerTextChange)
+
+
+- ### **StaggerTextReveal**
+
+- ### **StaggerTextChange**
+
 
 &nbsp;
 &nbsp;
@@ -25,7 +29,7 @@
 
 ## **Introduction**
 
-## The stagger text reveal animation package helps you to apply stagger effect to your text. Just pass your text as a prop. The components are fully [customizable](#props) and [responsive](#responsive). The package is available on [npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
+## The stagger text reveal animation package helps you to apply stagger effect to your text. Just pass your text as a prop. The components are fully [customizable](#props) and [responsive](#responsiveness). The package is available on [npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
 
 ### This animation is done using css and javascript in React Js so no need of any external libraries like anime.js, Spring etc
 
@@ -230,7 +234,6 @@ export const Component = () => {
 
 ---
 
-
 ## **Props**
 
 Same props as [StaggerTextReveal](#StaggerTextReveal) but
@@ -251,6 +254,7 @@ has an additional props of **changeTo**
 Same as [StaggerTextReveal](#StaggerTextReveal)
 
 ---
+
 ## **LICENSE**
 
 [MIT](./LICENSE)  ©  [Obaid Nadeem](https://github.com/ObaidNadeem)

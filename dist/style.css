@@ -1,6 +1,7 @@
-.stagger-animation-text{
-    overflow: hidden;
+.stagger-animation-text, .stagger-change-top, .stagger-change-bottom{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0;
+    padding: 0;
 }
