@@ -1,9 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import './style.css'
+import React, { useState, useEffect } from 'react';
+import './style.css';
 
 const StaggerText = ({
     text = "<text placeholder>",
     triggerAfter = 0,
+    height,
+    fontSize,
+    unit,
+    width,
+    reverse,
+    direction,
+    duration,
+    color,
+    fontWeight,
+    fontFamily,
+    stagger,
+    wordSpacing,
     ...props
 }) => {
 
@@ -33,44 +45,43 @@ const StaggerText = ({
         <div
             className="stagger-animation-text"
             style={{
-                height: `${(props.height == 0 || props.height == null ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.height)}${props.unit == null || props.unit == "" ? "px" : props.unit}`,
-                // width: `${props.width == 0 || props.width == null ? props.fontSize == 0 || props.fontSize == null ? 48 * letters.length : props.fontSize * letters.length : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
-                width: `${props.width == 0 || props.width == null ? "" : props.width}${props.unit == null || props.unit == "" ? "px" : props.unit}`
+                height: `${(height == 0 || height == null ? fontSize == 0 || fontSize == null ? 48 : fontSize : height)}${unit == null || unit == "" ? "px" : unit}`,
+                width: `${width == 0 || width == null ? "" : width}${unit == null || unit == "" ? "px" : unit}`
             }}
         >
             {
-                letters.map((item, i) => {
+                text[Symbol.iterator].map((item, i) => {
                     return (
                         <span key={i}
                             style={{
                                 transform:
-                                    props.reverse == null || props.reverse == "" || props.reverse == false || props.reverse !== true ?
+                                    reverse == null || reverse == "" || reverse == false || reverse !== true ?
                                         animate ?
-                                            `translateY(0${props.unit == null || props.unit == "" ? "px" : props.unit})` : `translateY(${props.direction == null || props.direction == "" || props.direction !== "down" ?
-                                                props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize
-                                                : props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize
-                                            }${props.unit == null || props.unit == "" ? "px" : props.unit})`
+                                            `translateY(0${unit == null || unit == "" ? "px" : unit})` : `translateY(${direction == null || direction == "" || direction !== "down" ?
+                                                fontSize == null || fontSize == 0 ? 48 : fontSize
+                                                : fontSize == null || fontSize == 0 ? -48 : -fontSize
+                                            }${unit == null || unit == "" ? "px" : unit})`
                                         :
                                         animate ?
-                                            `translateY(${props.direction == null || props.direction == "" || props.direction !== "down" ?
-                                                props.fontSize == null || props.fontSize == 0 ? -48 : -props.fontSize
-                                                : props.fontSize == null || props.fontSize == 0 ? 48 : props.fontSize
-                                            }${props.unit == null || props.unit == "" ? "px" : props.unit})` : `translateY(0${props.unit == null || props.unit == "" ? "px" : props.unit})`
+                                            `translateY(${direction == null || direction == "" || direction !== "down" ?
+                                                fontSize == null || fontSize == 0 ? -48 : -fontSize
+                                                : fontSize == null || fontSize == 0 ? 48 : fontSize
+                                            }${unit == null || unit == "" ? "px" : unit})` : `translateY(0${unit == null || unit == "" ? "px" : unit})`
                                 ,
 
-                                transitionDelay: `${((props.duration == null || props.duration == 0 ? 0.7 : props.duration) / (props.stagger == null || props.stagger == 0 ? 60 : props.stagger)) * i}s`,
-                                transitionDuration: `${props.duration == null || props.duration == 0 ? 0.7 : props.duration}s`,
+                                transitionDelay: `${((duration == null || duration == 0 ? 0.7 : duration) / (stagger == null || stagger == 0 ? 60 : stagger)) * i}s`,
+                                transitionDuration: `${duration == null || duration == 0 ? 0.7 : duration}s`,
                                 transitionTimingFunction: "ease-in-out",
                                 transitionProperty: "transform",
-                                color: `${props.color == "" || props.color == null ? "#282828" : props.color}`,
-                                fontSize: `${props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize}${props.unit == null || props.unit == "" ? "px" : props.unit}`,
-                                fontWeight: `${props.color == "" || props.fontWeight == null ? "bold" : props.fontWeight}`,
-                                fontFamily: `${props.fontFamily == "" || props.fontFamily == null ? "" : props.fontFamily}`
+                                color: `${color == "" || color == null ? "#282828" : color}`,
+                                fontSize: `${fontSize == 0 || fontSize == null ? 48 : fontSize}${unit == null || unit == "" ? "px" : unit}`,
+                                fontWeight: `${color == "" || fontWeight == null ? "bold" : fontWeight}`,
+                                fontFamily: `${fontFamily == "" || fontFamily == null ? "" : fontFamily}`
                             }}
                             className="stagger-animation-character"
                         >
                             {
-                                item == "&nbsp;" ? <p key={i} style={{ fontSize: `${props.wordSpacing == null || props.wordSpacing == 0 ? props.fontSize == 0 || props.fontSize == null ? 48 : props.fontSize : props.wordSpacing}${props.unit == null || props.unit == "" ? "px" : props.unit}` }} >&nbsp;</p> : item
+                                item == "&nbsp;" ? <p key={i} style={{ fontSize: `${wordSpacing == null || wordSpacing == 0 ? fontSize == 0 || fontSize == null ? 48 : fontSize : wordSpacing}${unit == null || unit == "" ? "px" : unit}` }} >&nbsp;</p> : item
                             }
                         </span>
                     )
