@@ -1,5 +1,13 @@
 # **Stagger Text Reveal Animation React JS**
 
+## THIS PACKAGE CONTAINS TWO COMPONENTS
+
+
+- ### **StaggerTextReveal**
+
+- ### **StaggerTextChange**
+
+
 &nbsp;
 &nbsp;
 
@@ -21,7 +29,7 @@
 
 ## **Introduction**
 
-## The stagger text reveal animation helps you to apply stagger effect to your text. Just pass your text as a prop. The component is fully [customizable](#props) and [responsive](#responsive) available on [npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
+## The stagger text reveal animation package helps you to apply stagger effect to your text. Just pass your text as a prop. The components are fully [customizable](#props) and [responsive](#responsiveness). The package is available on [npm](https://www.npmjs.com/package/stagger-text-reveal-animation)
 
 ### This animation is done using css and javascript in React Js so no need of any external libraries like anime.js, Spring etc
 
@@ -37,11 +45,17 @@
 
 ---
 
+&nbsp;
+
+# **StaggerTextReveal**
+
+Helps you to achieve text reveal animation.
+
 ## **Importing**
 
 ```javascript
 
-import StaggerText from "stagger-text-reveal-animation";
+import StaggerTextReveal from "stagger-text-reveal-animation";
 
 ```
 
@@ -54,14 +68,14 @@ import StaggerText from "stagger-text-reveal-animation";
 ```javascript
 
 import React from 'react';
-import StaggerText from "stagger-text-reveal-animation";
+import StaggerTextReveal from "stagger-text-reveal-animation";
 
 export const Component = () => {
 
     return (
            
         <div>
-            <StaggerText
+            <StaggerTextReveal
                text={"Obaid Nadeem"}
             />
         </div>
@@ -83,7 +97,7 @@ Use these props to customize your text animation.
 
 | Prop                | Type         | Description   | Default Value   |
 |:-------------:      | :----------: |:-------------:| :-----:         |
-| **text**                | String       |Takes your text as string and animates it.  | Stagger Text |
+| **text**                | String       |Takes your text as string and animates it.  | TEXT PLACEHOLDER |
 | **fontFamily**          | String       |Applies your font family      |   --           |
 | **fontWeight**          | String       |Customize font Weight      |    bolder          |
 | **fontSize**            | Number       |Pass the font size as number. Calculates value in pixels.       |    48px           |
@@ -106,14 +120,14 @@ Use these props to customize your text animation.
 
 ```javascript
 import React from 'react';
-import StaggerText from "stagger-text-reveal-animation";
+import StaggerTextReveal from "stagger-text-reveal-animation";
 
 export const Component = () => {
 
     return (
            
         <div>
-            <StaggerText
+            <StaggerTextReveal
                 text={"THE ILLUSION OF"}
                 fontFamily={"'Antic Didone', serif"}
                 fontWeight={"lighter"}
@@ -122,7 +136,7 @@ export const Component = () => {
                 stagger={50}
                 direction={"down"}
                 reverse={true}
-                triggerAfter={2}
+                triggerAfter={2000}
                 unit = {"rem"}
                 wordSpacing={200}
                 width={850}
@@ -141,7 +155,7 @@ export const Component = () => {
 
 ---
 
-## **Responsive**
+## **Responsiveness**
 
 The component can be made responsive using *vw* or *rem* or any other unit you want to use.
 
@@ -162,6 +176,82 @@ When using **rem** you would have to define rem values for different viewport wi
 ```
 
 &nbsp;
+
+---
+
+
+&nbsp;
+
+# **StaggerTextChange**
+
+Helps you to achieve text reveal animation.
+
+## **Importing**
+
+```javascript
+
+import StaggerTextChange from "stagger-text-reveal-animation";
+
+```
+
+&nbsp;
+
+---
+
+## **Usage**
+
+```javascript
+
+import React from 'react';
+import StaggerTextChange from "stagger-text-reveal-animation";
+
+export const Component = () => {
+
+    return (
+           
+        <StaggerTextChange
+                        text={"INITIAL TEXT"}
+                        changeTo={"CHANGED TEXT"}
+                        fontFamily={"'Antic Didone' serif"}
+                        fontWeight={"lighter"}
+                        fontSize={6}
+                        duration={0.9}
+                        stagger={10}
+                        direction={"down"}
+                        unit={"vw"}
+                        triggerAfter={500}
+                        wordSpacing={200}
+                        width={850}
+                        height={100}
+        />
+                    
+    );
+}
+
+```
+
+&nbsp;
+
+---
+
+## **Props**
+
+Same props as [StaggerTextReveal](#StaggerTextReveal) but
+has an additional props of **changeTo**
+
+| Prop                | Type         | Description   | Default Value   |
+|:-------------:      | :----------: |:-------------:| :-----:         |
+| **changeTo**                | String       |Takes your text as string and animates it.  | CHANGED TEXT |
+
+**reverse** prop dosen't works for this component.
+
+&nbsp;
+
+---
+
+## **Responsiveness**
+
+Same as [StaggerTextReveal](#StaggerTextReveal)
 
 ---
 
