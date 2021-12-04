@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './style.css'
 
-const StaggerText = ({
+const StaggerTextReveal = ({
     text = "<text placeholder>",
     triggerAfter = 0,
     ...props
@@ -223,4 +223,4 @@ const StaggerTextChange = ({
 
 
 
-export { StaggerText, StaggerTextChange };
+export { StaggerTextReveal, StaggerTextChange };

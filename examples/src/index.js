@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { render } from 'react-dom';
-import { StaggerText, StaggerTextChange } from '../../src';
+import { StaggerTextReveal , StaggerTextChange } from '../../src';
 import './style.css'
 import image from './image.jpeg'
 const App = () => {
