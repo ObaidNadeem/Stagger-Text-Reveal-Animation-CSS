@@ -55,7 +55,7 @@ Helps you to achieve text reveal animation.
 
 ```javascript
 
-import StaggerTextReveal from "stagger-text-reveal-animation";
+import { StaggerTextReveal } from "stagger-text-reveal-animation";
 
 ```
 
@@ -68,7 +68,7 @@ import StaggerTextReveal from "stagger-text-reveal-animation";
 ```javascript
 
 import React from 'react';
-import StaggerTextReveal from "stagger-text-reveal-animation";
+import { StaggerTextReveal } from "stagger-text-reveal-animation";
 
 export const Component = () => {
 
@@ -120,7 +120,7 @@ Use these props to customize your text animation.
 
 ```javascript
 import React from 'react';
-import StaggerTextReveal from "stagger-text-reveal-animation";
+import { StaggerTextReveal } from "stagger-text-reveal-animation";
 
 export const Component = () => {
 
@@ -194,7 +194,7 @@ Helps you to achieve text change reveal animation.
 
 ```javascript
 
-import StaggerTextChange from "stagger-text-reveal-animation";
+import { StaggerTextChange } from "stagger-text-reveal-animation";
 
 ```
 
@@ -207,7 +207,7 @@ import StaggerTextChange from "stagger-text-reveal-animation";
 ```javascript
 
 import React from 'react';
-import StaggerTextChange from "stagger-text-reveal-animation";
+import { StaggerTextChange } from "stagger-text-reveal-animation";
 
 export const Component = () => {
 
