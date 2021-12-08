@@ -1,4 +1,13 @@
-.stagger-animation-text, .stagger-change-top, .stagger-change-bottom{
+.stagger-animation-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    /* overflow: hidden; */
+}
+
+.stagger-change-top, .stagger-change-bottom{
     display: flex;
     justify-content: center;
     align-items: center;

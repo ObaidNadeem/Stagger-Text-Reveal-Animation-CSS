@@ -25,7 +25,7 @@ const App = () => {
                         }}
                     >ilusión</h3>
                     <div className="stagger">
-                        <StaggerTextChange
+                        <StaggerTextReveal
                             text={"WELL, LUCKILY"}
                             fontFamily={"'Antic Didone', serif"}
                             fontWeight={"lighter"}
