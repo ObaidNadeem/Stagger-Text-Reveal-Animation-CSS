@@ -184,7 +184,11 @@ When using **rem** you would have to define rem values for different viewport wi
 
 # **StaggerTextChange**
 
-Helps you to achieve text reveal animation.
+Helps you to achieve text change reveal animation.
+
+&nbsp;
+
+![demo](./examples/src/example2.gif)
 
 ## **Importing**
 
